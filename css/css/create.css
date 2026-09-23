@@ -1,0 +1,266 @@
+/* ================================
+   AbsoluteCare Create Account Styles
+================================ */
+
+:root {
+  --primary-blue: #1e4e79;
+  --secondary-teal: #2e8ca7;
+  --light-blue: #e6f2f7;
+  --soft-green: #a7d7c5;
+  --text-dark: #1f2937;
+  --text-gray: #6b7280;
+  --border-gray: #e5e7eb;
+  --background: #f8fafc;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  background: linear-gradient(135deg, var(--light-blue), var(--background));
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 500px;
+  background: var(--white);
+  padding: 38px 36px;
+  border-radius: 20px;
+  border: 1px solid var(--border-gray);
+  box-shadow: 0 15px 40px rgba(30, 78, 121, 0.08);
+}
+
+.brand-section {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.brand-icon {
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.brand-section h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 3px;
+}
+
+.brand-section h1 span {
+  color: var(--secondary-teal);
+}
+
+.brand-section p {
+  color: var(--text-gray);
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.welcome-section {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.welcome-section h2 {
+  font-size: 24px;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+.welcome-section p {
+  color: var(--text-gray);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.account-type-section {
+  margin-bottom: 22px;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.account-options {
+  display: grid;
+  gap: 12px;
+}
+
+.account-option {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.account-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.account-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  background: var(--white);
+  transition: 0.2s ease;
+}
+
+.account-option:hover .account-card {
+  border-color: var(--secondary-teal);
+  background: var(--light-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(30, 78, 121, 0.08);
+}
+
+.account-option input:checked + .account-card {
+  border-color: var(--secondary-teal);
+  background: var(--light-blue);
+  box-shadow: 0 0 0 3px rgba(46, 140, 167, 0.12);
+}
+
+.account-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--primary-blue);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.account-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-text strong {
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.account-text small {
+  color: var(--text-gray);
+  font-size: 12px;
+}
+
+.create-form {
+  margin-top: 20px;
+}
+
+.form-label {
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.form-label:hover {
+  color: var(--secondary-teal);
+  transform: translateX(2px);
+}
+
+.form-control,
+.form-select {
+  height: 48px;
+  border: 1px solid var(--border-gray);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--secondary-teal);
+  box-shadow: 0 0 0 3px rgba(46, 140, 167, 0.12);
+}
+
+.btn-create {
+  width: 100%;
+  height: 48px;
+  background: var(--primary-blue);
+  border: none;
+  border-radius: 10px;
+  color: var(--white);
+  font-weight: 600;
+  transition: 0.2s ease;
+  margin-top: 8px;
+}
+
+.btn-create:hover {
+  background: #173e61;
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.login-link {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.login-link a {
+  color: var(--secondary-teal);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 35px 22px;
+    border-radius: 16px;
+  }
+
+  .welcome-section h2 {
+    font-size: 21px;
+  }
+
+  .brand-section h1 {
+    font-size: 25px;
+  }
+}
