@@ -32,8 +32,58 @@
           </p>
         </div>
 
+        <div class="account-type-section">
+          <div class="section-title">Select account type</div>
+
+          <div class="account-options">
+            <label class="account-option">
+              <input type="radio" name="accountType" value="admin" checked />
+              <span class="account-card">
+                <span class="account-icon">A</span>
+                <span class="account-text">
+                  <strong>Admin</strong>
+                  <small>Full access to system control</small>
+                </span>
+              </span>
+            </label>
+
+            <label class="account-option">
+              <input type="radio" name="accountType" value="secretary" />
+              <span class="account-card">
+                <span class="account-icon">S</span>
+                <span class="account-text">
+                  <strong>Secretary</strong>
+                  <small>Manage schedules and records</small>
+                </span>
+              </span>
+            </label>
+
+            <label class="account-option">
+              <input type="radio" name="accountType" value="patient" />
+              <span class="account-card">
+                <span class="account-icon">P</span>
+                <span class="account-text">
+                  <strong>Patient</strong>
+                  <small>Book sessions and track progress</small>
+                </span>
+              </span>
+            </label>
+
+            <label class="account-option">
+              <input type="radio" name="accountType" value="therapist" />
+              <span class="account-card">
+                <span class="account-icon">T</span>
+                <span class="account-text">
+                  <strong>Therapist</strong>
+                  <small>Manage treatment plans</small>
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+
         <!-- Login Form -->
-        <form>
+        <form id="loginForm">
           <div class="mb-3">
             <label for="email" class="form-label"> Email Address </label>
 
@@ -74,5 +124,33 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const selectedRole =
+        params.get("role") ||
+        localStorage.getItem("absocare-user-role") ||
+        "patient";
+
+      const roleInput = document.querySelector(
+        `input[name="accountType"][value="${selectedRole}"]`,
+      );
+      if (roleInput) {
+        roleInput.checked = true;
+      }
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const chosenRole =
+            document.querySelector('input[name="accountType"]:checked')
+              ?.value || selectedRole;
+          localStorage.setItem("absocare-user-role", chosenRole);
+          localStorage.setItem("absocare-user-name", "John Doe");
+          window.location.href = `dashboard.html?role=${encodeURIComponent(chosenRole)}`;
+        });
+    </script>
   </body>
 </html>

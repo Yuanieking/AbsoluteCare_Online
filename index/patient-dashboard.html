@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Absolute Care Patient Dashboard</title>
+    <link rel="stylesheet" href="../css/css/dashboard.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a
+        class="brand"
+        href="patient-dashboard.html"
+        aria-label="AbsoluteCare dashboard"
+      >
+        <span class="brand-icon">AC</span>
+        <span class="brand-name">Absolute<span>Care</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="patient-dashboard.html">Dashboard</a>
+        <a class="nav-link" href="#appointments">Appointments</a>
+        <a class="nav-link" href="#records">Records</a>
+        <a class="nav-link" href="#schedule">Schedule</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button
+          class="icon-button"
+          type="button"
+          aria-label="View notifications"
+        >
+          <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+            <path d="M10 21h4" />
+          </svg>
+          <span class="notification-dot"></span>
+        </button>
+        <button
+          class="profile-button"
+          type="button"
+          aria-label="Open account menu"
+        >
+          <span class="profile-avatar">JD</span>
+          <span class="profile-copy">
+            <strong>John Doe</strong>
+            <small>Patient</small>
+          </span>
+          <span class="chevron" aria-hidden="true">&#8964;</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="dashboard-layout">
+      <aside class="sidebar" aria-label="Dashboard sidebar">
+        <div class="sidebar-heading">
+          <span class="sidebar-heading-text">Workspace</span>
+          <button
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            type="button"
+            aria-label="Hide sidebar"
+            aria-expanded="true"
+          >
+            <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Dashboard sections">
+          <a class="sidebar-link active" href="patient-dashboard.html">
+            <span class="sidebar-icon" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24">
+                <rect x="4" y="4" width="6" height="6" rx="1" />
+                <rect x="14" y="4" width="6" height="6" rx="1" />
+                <rect x="4" y="14" width="6" height="6" rx="1" />
+                <rect x="14" y="14" width="6" height="6" rx="1" />
+              </svg>
+            </span>
+            <span>Overview</span>
+          </a>
+          <a class="sidebar-link" href="#appointments">
+            <span class="sidebar-icon" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M16 3v4M8 3v4M3 10h18" />
+              </svg>
+            </span>
+            <span>My Appointments</span>
+          </a>
+          <a class="sidebar-link" href="#records">
+            <span class="sidebar-icon" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24">
+                <path d="M6 3h9l3 3v15H6z" />
+                <path d="M14 3v4h4M9 12h6M9 16h6" />
+              </svg>
+            </span>
+            <span>Medical Records</span>
+          </a>
+          <a class="sidebar-link" href="#schedule">
+            <span class="sidebar-icon" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24">
+                <path d="M12 5v14M5 12h14" />
+                <circle cx="12" cy="12" r="9" />
+              </svg>
+            </span>
+            <span>Schedule Visit</span>
+          </a>
+          <a class="sidebar-link" href="#messages">
+            <span class="sidebar-icon" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24">
+                <path d="M4 6h16v12H8l-4 4V6Z" />
+                <path d="M8 10h8M8 14h6" />
+              </svg>
+            </span>
+            <span>Messages</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a class="sidebar-link" href="#settings">
+            <span class="sidebar-icon" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.4 1.4-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-2v-.2a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L9 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H7v-2h.8a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L9 9l1.4-1.4.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6V6h2v.4a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L20 9l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v2h-.4a1.7 1.7 0 0 0-1.6 1Z"
+                />
+              </svg>
+            </span>
+            <span>Settings</span>
+          </a>
+          <a class="sidebar-link" href="index.html">
+            <span class="sidebar-icon" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24">
+                <path d="M10 17l5-5-5-5M15 12H3M21 4v16" />
+              </svg>
+            </span>
+            <span>Sign Out</span>
+          </a>
+        </div>
+      </aside>
+
+      <main class="dashboard-content">
+        <section id="appointments" class="dashboard-section">
+          <h1>Patient Dashboard</h1>
+          <p>
+            View your records, appointments, and visit requests in one place.
+          </p>
+
+          <div class="dashboard-grid">
+            <article class="info-card">
+              <h2>Upcoming Appointments</h2>
+              <p>Your scheduled visits will appear here.</p>
+            </article>
+
+            <article id="records" class="info-card">
+              <h2>Medical Records</h2>
+              <p>Access your treatment notes and care history.</p>
+            </article>
+
+            <article id="schedule" class="info-card">
+              <h2>Schedule an Appointment</h2>
+              <p>Book a new consultation or follow-up visit.</p>
+            </article>
+
+            <article id="messages" class="info-card">
+              <h2>Messages</h2>
+              <p>See updates from your care team and clinic staff.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../script/dashboard.js"></script>
+  </body>
+</html>

@@ -150,5 +150,34 @@
       </main>
     </div>
     <script src="../script/dashboard.js"></script>
+    <script>
+      const roleLabels = {
+        admin: "Administrator",
+        secretary: "Secretary",
+        patient: "Patient",
+        therapist: "Therapist",
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const role =
+        params.get("role") ||
+        localStorage.getItem("absocare-user-role") ||
+        "admin";
+      const roleName = roleLabels[role] || "Administrator";
+
+      const profileName = document.querySelector(".profile-copy strong");
+      const profileRole = document.querySelector(".profile-copy small");
+      const dashboardTitle = document.querySelector(".dashboard-section h1");
+      const dashboardText = document.querySelector(".dashboard-section p");
+
+      if (profileName)
+        profileName.textContent =
+          localStorage.getItem("absocare-user-name") || "John Doe";
+      if (profileRole) profileRole.textContent = roleName;
+      if (dashboardTitle) dashboardTitle.textContent = `${roleName} Dashboard`;
+      if (dashboardText) {
+        dashboardText.textContent = `Welcome back. You are viewing the ${roleName.toLowerCase()} dashboard.`;
+      }
+    </script>
   </body>
 </html>
